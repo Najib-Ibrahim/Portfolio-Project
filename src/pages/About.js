@@ -1,14 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
 import PText from '../components/PText';
-import Button from '../components/Button';
 import AboutImg from '../assets/images/about-page-img.jpg';
 import AboutInfoItem from '../components/AboutInfoItem';
 import ContactBanner from '../components/ContactBanner';
+import resume from '../assets/data/Curriculum Vitae.pdf';
 
 const AboutPageStyles = styled.div`
   padding: 20rem 0 10rem 0;
 
+  a {
+    color: #404548;
+    font-size: 2.2rem;
+    background-color: ${(props) =>
+      props.outline ? 'transperant' : 'var(--gray-1)'};
+    padding: 0.7em 2em;
+    border: 2px solid var(--gray-1);
+    border-radius: 8px;
+    display: inline-block;
+    color: ${(props) => (props.outline ? 'var(--gary-1)' : 'black')};
+  }
   .top-section {
     display: flex;
     align-items: center;
@@ -102,10 +113,11 @@ export default function About() {
                   innovation.
                 </PText>
               </div>
-              <Button
-                btnText="Download CV"
-                btnLink="/src/assets/data/Curriculum Vitae.pdf"
-              />
+              <div>
+                <a href={resume} target="_blank" rel="noopener noreferrer">
+                  Download CV
+                </a>
+              </div>
             </div>
             <div className="right">
               <img src={AboutImg} alt="me" />

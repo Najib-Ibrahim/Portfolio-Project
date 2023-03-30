@@ -22,8 +22,8 @@ const ButtonStyle = styled.div`
 `;
 
 export default function Button({
-  btnText = 'test',
-  btnLink = 'test',
+  btnText = '',
+  btnLink = '',
   outline = false,
 }) {
   return (
